@@ -20,7 +20,7 @@ fn get_value(r: &IntInput) -> i32 {
 }
 
 fn main() {
-    // Main aoo
+    // Main app
     let app = App::default();
 
     // Main form
@@ -50,10 +50,10 @@ fn main() {
             match msg {
                 Message::Green => {
                     // Draw Green Circle
-                    let value = get_value(&radius) as f64;
+                    let value = get_value(&radius);
                     wind.draw(move |_| {
                         set_draw_color(Color::Green);
-                        draw_circle(200.0, 150.0, value);
+                        draw_circle_fill(200, 150, value,Color::Green );
                     });
 
                     // Force form refresh
@@ -61,10 +61,10 @@ fn main() {
                 }
                 Message::Red => {
                     // Draw Red Circle
-                    let value = get_value(&radius) as f64;
+                    let value = get_value(&radius);
                     wind.draw(move |_| {
                         set_draw_color(Color::Red);
-                        draw_circle(200.0, 150.0, value);
+                        draw_circle_fill(200, 150, value,Color::Red);
                     });
 
                     // Force form refresh
